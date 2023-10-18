@@ -1,3 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*css personalizado*/
+body {
+    font-family: Roboto, sans-serif;
+  }
+  
+.color-basic{
+    background-color: #09FFFF;
+}
