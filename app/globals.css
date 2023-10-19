@@ -1,0 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*css personalizado*/
+body {
+    font-family: Roboto, sans-serif;
+  }
+  
+.color-basic{
+    background-color: #09FFFF;
+}
+
+.color-gradient{
+  background: rgb(3,179,179);
+background: linear-gradient(90deg, rgba(3,179,179,1) 33%, rgba(9,255,255,1) 100%);
+}
