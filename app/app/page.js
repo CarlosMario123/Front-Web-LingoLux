@@ -1,10 +1,10 @@
 'use client'
-import { CardsDay } from '../components/Molecules/CardsDay'
+import { HomeOne } from "@/components/Organims/HomeOne"
 
 export default function Home() {
   return (
-    <div className = 'w-screen' >
-      <CardsDay/>
+    <div >
+      <HomeOne/>
     </div>
   )
 }
