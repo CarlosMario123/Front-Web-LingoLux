@@ -3,7 +3,7 @@ import { HomeOne } from "@/components/Organims/HomeOne"
 
 export default function Home() {
   return (
-    <div >
+    <div className="w-screen">
       <HomeOne/>
     </div>
   )

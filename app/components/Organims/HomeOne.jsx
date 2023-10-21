@@ -2,6 +2,9 @@ import { CardsRoute } from "../Molecules/CardsRoute"
 import { CardsDiccionary } from "../Molecules/CardsDiccionary"
 import { CardsDay } from "../Molecules/CardsDay"
 import { TextTitle } from "../Atoms/Text.Title"
+import ContainRutas from "../Molecules/ContainRutas"
+import ContainDiccionary from "../Molecules/ContainDiccionary"
+import Navbar from "../Molecules/Navbar"
 
 export const HomeOne = () => {
 
@@ -16,11 +19,11 @@ export const HomeOne = () => {
         },
         {
           titulo: "Presente Simple",
-          descripcion: "Sumérgete en las complejidades del tiempo gramatical con esta guía del Presente Simple. Descubre cómo este tiempo verbal estructura nuestras expresiones cotidianas de una manera clara y concisa."
+          descripcion: "Sumérgete en las complejidad cómo este tiempo verbal estructura nuestras expresiones cotidianas de una manera clara y concisa."
         }
       ]
 
-      const arrayDictionry = [ 'Mascotas', 'Gramatica Presente Simple', 'Profesiones', 'Frutas']
+      const arrayDictionry = [ 'Mascotas', 'Gramatica Presente Simple', 'Profesiones', 'Frutas',"asdsadas","asdaasd",'Mascotas', 'Gramatica Presente Simple', 'Profesiones', 'Frutas',"asdsadas","asdaasd"]
 
       const arrayWords = [
         { ingles: 'Hello', espanol: 'Hola' },
@@ -31,31 +34,12 @@ export const HomeOne = () => {
       ]
 
   return (
-    <>
-    <TextTitle children={'Ruta de Viaje'} />
-    <div className='flex flex-col sm:flex-row'>
-      {arrayTitles.map(({ titulo, descripcion }) => (
-        <CardsRoute key={titulo} children={titulo} description={descripcion} />
-      ))}
-    </div>
-  
-    <TextTitle children={"Diccionario"} />
-  
-    <div className='flex flex-col sm:flex-row'>
-      {arrayDictionry.map((word, index) => (
-        <CardsDiccionary key={index} children={word} />
-      ))}
-    </div>
-  
-    <TextTitle children={'Palabras del día'} aligned={'text-center'} />
-    <div className = 'flex flex-col sm:flex-row' >
-      {
-        arrayWords.map( (word, index) => (
-          <CardsDay key = { index } childrenEng = { word.ingles } childrenEs={ word.espanol }  />
-        ) )
-      }
-    </div>
-  </>
+    <div className="flex flex-col items-center w-screen h-screen">
+     <Navbar/>
+    <ContainRutas arrayTitles={arrayTitles}/>
+    <ContainDiccionary arrayDictionry={arrayDictionry}/>
+
+  </div>
   
   )
 }

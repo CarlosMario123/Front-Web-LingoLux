@@ -13,3 +13,15 @@ body {
 .color-basic{
     background-color: #09FFFF;
 }
+
+.scroll-container::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: transparent; /* Color transparente para la barra de desplazamiento */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent; /* Color transparente para la pista de desplazamiento */
+}
