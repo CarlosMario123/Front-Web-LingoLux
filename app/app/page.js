@@ -1,10 +1,12 @@
 'use client'
-import { HomeOne } from "@/components/Organims/HomeOne"
+import FormLogin from "@/components/Organims/FormLogin"
 
 export default function Home() {
   return (
-    <div className="w-screen">
-      <HomeOne/>
+
+   <div>
+      <FormLogin/>
+
     </div>
   )
 }
