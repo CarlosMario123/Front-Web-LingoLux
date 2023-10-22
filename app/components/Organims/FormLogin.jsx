@@ -11,7 +11,7 @@ export default function FormLogin() {
 
   // Si el usuario ya está logeado, redireccionarlo a la página de inicio
   if (username) {
-    router.push("/inicio");
+    router.push("/home");
     return;
   }
 
@@ -31,12 +31,12 @@ export default function FormLogin() {
     <div className="flex items-center justify-center w-screen h-screen color-gradient">
       <div className="p-4 bg-white rounded-md w-[20rem] h-96">
         <h1 className="mb-2 text-2xl font-semibold text-center text-sky-400">
-          Iniciar seccion
+          Iniciar Sesión
         </h1>
         <div className="flex flex-col items-center gap-y-4 mt-14">
           <input
             type="text"
-            placeholder="username"
+            placeholder="Username"
             name="username"
             className="p-1  text-[0.9rem] w-64 px-2  border-b border-sky-500 outline-none"
             onChange={inputChange}
@@ -50,7 +50,7 @@ export default function FormLogin() {
           />
           <input
             type="password"
-            placeholder="contrasena"
+            placeholder="Password"
             name="contrasena"
             className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none"
             onChange={inputChange}
@@ -59,7 +59,7 @@ export default function FormLogin() {
             onClick={enviarDatos}
             className="p-1 mt-10 text-white rounded-sm bg-sky-500 w-36"
           >
-            Iniciar seccion
+            Iniciar Sesión
           </button>
         </div>
       </div>
