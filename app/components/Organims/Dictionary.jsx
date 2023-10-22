@@ -20,7 +20,7 @@ export const Dictionary = () => {
 
   return (
 
-    <div className = ' flex flex-wrap justify-between h-auto sm:w-full gap-x-2 px-2' >
+    <div className = ' flex flex-wrap justify-between h-auto sm:w-full gap-x-2 p' >
       {
           petsArray.map( (pet, index) =>(
             <CardsDiccionary key =  { index } children = { pet.ingles } childrenEs = { pet.espanol } /> 

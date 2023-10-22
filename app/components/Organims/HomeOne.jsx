@@ -41,7 +41,7 @@ export const HomeOne = () => {
   
     <TextTitle children={"Diccionario"} />
   
-    <div className='flex flex-col sm:flex-row'>
+    <div className='flex w-screen justify-between gap-x-4 flex-row sm: '>
       {arrayDictionry.map((word, index) => (
         <CardsDiccionary key={index} children={word} />
       ))}
