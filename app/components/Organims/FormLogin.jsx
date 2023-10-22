@@ -24,7 +24,7 @@ export default function FormLogin() {
   const enviarDatos = () => {
     // Guarda el objeto formState en el localstorage
     localStorage.setItem("123", JSON.stringify(formState));
-    router.push("/inicio");
+    router.push("/home");
   };
 
   return (
