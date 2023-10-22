@@ -28,7 +28,7 @@ export const Dictionary = () => {
   return (
     <div>
       <Navbar/>
-      <div className=" sm:w-full flex justify-around py-4 px-2 flex-wrap gap-x-4 gap-y-4 ">
+      <div className=" flex justify-around py-4 px-2 flex-wrap gap-x-4 gap-y-4 ">
         {petsArray.map((word, index) => (
           <CardsDiccionary
             key={index}
