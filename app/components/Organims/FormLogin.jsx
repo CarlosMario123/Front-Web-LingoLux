@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "@/hooks/useForm";
 import { useRouter } from "next/navigation";
-
+import axios from "axios";
 export default function FormLogin() {
     
   //permite hacer el redireccionamiento de las paginas
@@ -22,9 +22,25 @@ export default function FormLogin() {
   });
 
   const enviarDatos = () => {
-    // Guarda el objeto formState en el localstorage
-    localStorage.setItem("123", JSON.stringify(formState));
-    router.push("/home");
+    //evaluamos que tenga algo los datos
+      if(formState.username == "" || formState.email == "" || formState.contrasena == ""){
+        alert("favor de llenar lo campos restantes por favor")
+        return
+      }
+      //cremamos un objeto antes de enviarlo
+      const usuario = {nombre:formState.username,
+        correo:formState.email,
+        password:formState.contrasena
+      };
+      //hacemos el post ala api
+      axios.post("http://localhost:3000/API/usuarios",usuario).then((response)=>{
+            if(response.status == 201){
+              console.log("se realizo bien el registo")
+            }
+      })
+      
+    //localStorage.setItem("123", JSON.stringify(formState));
+    //router.push("/home");
   };
 
   return (
