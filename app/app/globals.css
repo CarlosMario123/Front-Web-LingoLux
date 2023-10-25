@@ -14,6 +14,11 @@ body {
     background-color: #09FFFF;
 }
 
+.color-gradient{
+  background: rgb(3,179,179);
+background: linear-gradient(90deg, rgba(3,179,179,1) 33%, rgba(9,255,255,1) 100%);
+}
+
 
 .scroll-container::-webkit-scrollbar {
   width: 12px; /* Ancho de la barra de desplazamiento */

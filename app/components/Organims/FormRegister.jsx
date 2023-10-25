@@ -2,7 +2,7 @@
 import { useForm } from "@/hooks/useForm";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-export default function FormLogin() {
+export default function FormRegister() {
     
   //permite hacer el redireccionamiento de las paginas
   const router = useRouter();
@@ -16,13 +16,14 @@ export default function FormLogin() {
   }
 
   const { formState, inputChange } = useForm({
+    username: "",
     email: "",
     contrasena: "",
   });
 
   const enviarDatos = () => {
     //evaluamos que tenga algo los datos
-      if(formState.email == "" || formState.contrasena == ""){
+      if(formState.username == "" || formState.email == "" || formState.contrasena == ""){
         alert("favor de llenar lo campos restantes por favor")
         return
       }
@@ -31,8 +32,17 @@ export default function FormLogin() {
         correo:formState.email,
         password:formState.contrasena
       };
-      //aca haremos el inicio de seccion
-     
+      //hacemos el post ala api
+      axios.post("http://localhost:3000/API/usuarios", usuario)
+  .then((response) => {
+    if (response.status === 201) {
+      console.log("El registro se realizó correctamente");
+    }
+  })
+  .catch((error) => {
+    console.error("Ocurrió un error al realizar la solicitud:", error);
+  });
+
     //localStorage.setItem("123", JSON.stringify(formState));
     //router.push("/home");
   };
@@ -41,9 +51,16 @@ export default function FormLogin() {
     <div className="flex items-center justify-center w-screen h-screen color-gradient">
       <div className="p-4 bg-white rounded-md w-[20rem] h-96">
         <h1 className="mb-2 text-2xl font-semibold text-center text-sky-400">
-          Iniciar Sesión
+           Registro
         </h1>
         <div className="flex flex-col items-center gap-y-4 mt-14">
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            className="p-1  text-[0.9rem] w-64 px-2  border-b border-sky-500 outline-none"
+            onChange={inputChange}
+          />
           <input
             type="email"
             placeholder="Email"
@@ -62,7 +79,7 @@ export default function FormLogin() {
             onClick={enviarDatos}
             className="p-1 mt-10 text-white rounded-sm bg-sky-500 w-36"
           >
-            Iniciar Sesión
+           Registrarse
           </button>
         </div>
       </div>
