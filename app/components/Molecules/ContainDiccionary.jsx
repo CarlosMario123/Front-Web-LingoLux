@@ -1,3 +1,4 @@
+import MasContent from "../Atoms/MasContent";
 import { TextTitle } from "../Atoms/Text.Title";
 import { CardsDiccionary } from "./CardsDiccionary";
 import ContainDeslize from "./ContainDeslize";
@@ -5,12 +6,20 @@ import ContainDeslize from "./ContainDeslize";
 export default function ContainDiccionary({ arrayDictionry, children }) {
   return (
     <>
-      <TextTitle children={"Diccionarios"} />
+    <div className="flex items-center justify-between w-full px-7">
+    <TextTitle children={"Diccionarios"} />
+   
+    </div>
+      
       <ContainDeslize>
-        {arrayDictionry.map((word, index) => (
+      {arrayDictionry.slice(0, 5).map((word, index) => (
           <CardsDiccionary key={index} children={word} />
         ))}
       </ContainDeslize>
+      <div className="flex justify-end w-full px-8">
+      <MasContent texto={"Ver mas"} redir={"/"}/> 
+      </div>
+   
     </>
   );
 }

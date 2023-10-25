@@ -2,6 +2,7 @@
 import { useForm } from "@/hooks/useForm";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Link from "next/link";
 export default function FormLogin() {
     
   //permite hacer el redireccionamiento de las paginas
@@ -48,14 +49,14 @@ export default function FormLogin() {
             type="email"
             placeholder="Email"
             name="email"
-            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none"
+            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none bg-transparent"
             onChange={inputChange}
           />
           <input
             type="password"
             placeholder="Password"
             name="contrasena"
-            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none"
+            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none bg-transparent"
             onChange={inputChange}
           />
           <button
@@ -64,6 +65,7 @@ export default function FormLogin() {
           >
             Iniciar Sesión
           </button>
+          <Link href={"/registro"}>Registrarse</Link>
         </div>
       </div>
     </div>

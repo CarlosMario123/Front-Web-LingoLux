@@ -9,9 +9,9 @@ export default function Navbar() {
   return (
     <nav className="flex justify-end w-full px-4 py-2 color-basic">
         <div className="flex flex-row items-center gap-x-10">
-        <Link href={"/"} className="font-light ">Aprender</Link>
-         <Link href={"/sala"} className="font-light">Sala</Link>
-         <Link href={"/status"} className="font-light">estatus</Link>
+        <Link href={"/home"} className="font-light text-black text-roboto">Aprender</Link>
+         <Link href={"/sala"} className="font-light text-black text-roboto">Sala</Link>
+         <Link href={"/status"} className="font-light text-black text-roboto">estatus</Link>
          <Start cantidad = {5}/>
         <UserImg/>
         </div>

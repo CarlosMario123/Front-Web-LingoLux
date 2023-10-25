@@ -26,9 +26,9 @@ export const Dictionary = () => {
   ];
 
   return (
-    <div>
+    <div className="w-screen bg-white">
       <Navbar/>
-      <div className=" flex justify-around py-4 px-2 flex-wrap gap-x-4 gap-y-4 ">
+      <div className="flex flex-wrap justify-around px-2 py-4 gap-x-4 gap-y-4">
         {petsArray.map((word, index) => (
           <CardsDiccionary
             key={index}

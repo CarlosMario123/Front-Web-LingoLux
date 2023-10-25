@@ -34,7 +34,7 @@ export const HomeOne = () => {
       ]
 
   return (
-    <div className="flex flex-col items-center w-screen h-screen">
+    <div className="flex flex-col items-center w-screen h-screen bg-white">
      <Navbar/>
     <ContainRutas arrayTitles={arrayTitles}/>
     <ContainDiccionary arrayDictionry={arrayDictionry}/>

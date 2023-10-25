@@ -2,8 +2,14 @@
 import { useForm } from "@/hooks/useForm";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import ErrorAlert from "../Molecules/ErrorAlert";
+import { useState } from "react";
+import Link from "next/link";
 export default function FormRegister() {
     
+  //este estado nos permite manejar mensaje de errores
+  const [msg,setMsg] = useState("");
+  const[verError,setVerError] = useState(false)
   //permite hacer el redireccionamiento de las paginas
   const router = useRouter();
 
@@ -41,6 +47,8 @@ export default function FormRegister() {
   })
   .catch((error) => {
     console.error("Ocurrió un error al realizar la solicitud:", error);
+    setMsg(error.response.data.errors[0].msg)
+    setVerError(true);
   });
 
     //localStorage.setItem("123", JSON.stringify(formState));
@@ -48,7 +56,8 @@ export default function FormRegister() {
   };
 
   return (
-    <div className="flex items-center justify-center w-screen h-screen color-gradient">
+    <div className="flex flex-col items-center justify-center w-screen h-screen color-gradient">
+  
       <div className="p-4 bg-white rounded-md w-[20rem] h-96">
         <h1 className="mb-2 text-2xl font-semibold text-center text-sky-400">
            Registro
@@ -58,21 +67,21 @@ export default function FormRegister() {
             type="text"
             placeholder="Username"
             name="username"
-            className="p-1  text-[0.9rem] w-64 px-2  border-b border-sky-500 outline-none"
+            className="p-1  text-[0.9rem] w-64 px-2  border-b border-sky-500 outline-none bg-transparent"
             onChange={inputChange}
           />
           <input
             type="email"
             placeholder="Email"
             name="email"
-            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none"
+            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none bg-transparent"
             onChange={inputChange}
           />
           <input
             type="password"
             placeholder="Password"
             name="contrasena"
-            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none"
+            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none bg-transparent"
             onChange={inputChange}
           />
           <button
@@ -81,8 +90,13 @@ export default function FormRegister() {
           >
            Registrarse
           </button>
+          <Link href={"/"}>Ir a iniciar seccion</Link>
         </div>
       </div>
+      {
+        verError && <ErrorAlert msg={msg} setError={setVerError}/>
+      }
+      
     </div>
   );
 }
