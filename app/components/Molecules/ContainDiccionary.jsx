@@ -12,8 +12,9 @@ export default function ContainDiccionary({ arrayDictionry, children }) {
     </div>
       
       <ContainDeslize>
+        {/*//! Agrega como funciona este Componente  */}
       {arrayDictionry.slice(0, 5).map((word, index) => (
-          <CardsDiccionary key={index} children={word} />
+          <CardsDiccionary key={index} children={word} /> 
         ))}
       </ContainDeslize>
       <div className="flex justify-end w-full px-8">
