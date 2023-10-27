@@ -1,0 +1,32 @@
+Lecciones: [
+     {
+        "_id":"asfsasfaafsa",
+        "nombre": "Leccion 1",
+        "temas":[
+             {
+                "id":1,
+                "nombre":"las vocales",
+                "cuerpo":"Sonido corto: En palabras como cat o bat, la vocal A suena como la a en gato en español.",
+                 "imagenes:":[
+                    {
+                      "url":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/RedCat_8727.jpg/1200px-RedCat_8727.jpg",
+                       "texto":"cat"
+                    },
+                    {
+                        "url":"https://i.pinimg.com/736x/74/39/70/743970487d214ae99fc0ef339e1c6cce.jpg",
+                         "texto":"hat"
+                      }
+                 ]
+             }
+        ],
+        "preguntas":[
+            {
+                "id":1,
+                 "pregunta":"como suena el sonido largo de la vocal A en ingles",
+                 "opciones":["ei","ai","a","iu"],
+                 "opcionCorrecta":"ei"
+
+            }
+        ]
+     }
+]

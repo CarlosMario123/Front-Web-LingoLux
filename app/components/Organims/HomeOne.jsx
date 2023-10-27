@@ -6,24 +6,85 @@ import ContainRutas from "../Molecules/ContainRutas"
 import ContainDiccionary from "../Molecules/ContainDiccionary"
 import Navbar from "../Molecules/Navbar"
 
+
+//imagenes
+import utilesI from"../../recursos/utiles-1.png"
+
 export const HomeOne = () => {
 
     const arrayTitles = [
         {
           titulo: "Mis primeras palabras",
-          descripcion: "Un viaje encantador a través de las primeras palabras que marcan el inicio del lenguaje, explorando el fascinante mundo de la comunicación inicial."
+          url: utilesI
         },
         {
           titulo: "Aprendiendo a contar",
-          descripcion: "Una experiencia educativa llena de números y diversión, diseñada para enseñar a los pequeños los conceptos básicos del conteo de una manera emocionante y atractiva."
+          url: utilesI
         },
         {
-          titulo: "Presente Simple",
-          descripcion: "Sumérgete en las complejidad cómo este tiempo verbal estructura nuestras expresiones cotidianas de una manera clara y concisa."
-        }
+          titulo: "Presente Simple 1",
+          url: utilesI
+          }
+          ,
+        {
+          titulo: "Presente Simple 2",
+          url: utilesI
+          }
+          ,
+        {
+          titulo: "Presente Simple 3",
+          url: utilesI
+          }
+          ,
+        {
+          titulo: "Presente Simple 4",
+          url: utilesI
+          }
+          ,
+        {
+          titulo: "Presente Simple 5 ",
+          url: utilesI
+          }
       ]
 
-      const arrayDictionry = [ 'Mascotas', 'Gramatica Presente Simple', 'Profesiones', 'Frutas',"asdsadas","asdaasd",'Mascotas', 'Gramatica Presente Simple', 'Profesiones', 'Frutas',"asdsadas","asdaasd"]
+      const arrayDictionry = [ {
+        titulo: "Presente Simple 51",
+        url: utilesI
+        }
+        ,
+        {
+          titulo: "Presente Simple 25",
+          url: utilesI
+          }
+          , {
+            titulo: "Presente Simple 43",
+            url: utilesI
+            }
+            , {
+              titulo: "Presente Simple 4",
+              url: utilesI
+              }
+              , {
+                titulo: "Presente Simple 34",
+                url: utilesI
+                }
+                , {
+                  titulo: "Presente Simple 21",
+                  url: utilesI
+                  }
+                  , {
+                    titulo: "Presente Simple 5",
+                    url: utilesI
+                    }
+                    , {
+                      titulo: "Presente Simple 6",
+                      url: utilesI
+                      }
+                      , {
+                        titulo: "Presente Simple 7",
+                        url: utilesI
+                        }
+              ]
 
       const arrayWords = [
         { ingles: 'Hello', espanol: 'Hola' },

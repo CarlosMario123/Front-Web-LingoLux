@@ -1,11 +1,10 @@
-export const CardsDiccionary = ({ url, children, childrenEs }) => {
+import Image from "next/image"
+export const CardsDiccionary = ({word}) => {
   return (
-    <div className="flex h-[12rem] rounded-md shadow-lg color-basic w-[11rem]">
-      <div className = ' p-4'>
-        <h2 className="w-full text-[1.1] font-semibold text-center text-gray-800"> {children} </h2>
-        <img src={url} alt="" />
-        <p className = "text-center text-gray-600 "> { childrenEs } </p>
-      </div>
+    <div className="flex h-[12rem] rounded-md shadow-lg card-style w-[11rem] flex-col justify-center items-center">
+   
+        <Image src={word.url} width={70} height={70} />
+        <p className = "text-center text-gray-600 mt-2 font-semibold"> { word.titulo} </p>
     </div>
   )
 }
