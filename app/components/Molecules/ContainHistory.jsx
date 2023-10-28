@@ -5,7 +5,9 @@ import { historias } from "@/dataFalse/history";
 import { useEffect, useState } from "react";
 //Este es un hook personalizado que nos permite medir el tamaño width de nuestra page
 import useWindowWidth from "@/hooks/useWindowWidth";
+import { useRouter } from "next/navigation";
 export default function ContainHistory() {
+  const router = useRouter()
   const [hist,setHi] = useState(historias());
    
   const windowWidth = useWindowWidth();
@@ -39,7 +41,7 @@ export default function ContainHistory() {
     setPosicionX2(posicionX2 + 1)
  
  }
-
+  
  const backCard = () =>{
 
    if(posicionX1 == 0){
@@ -49,16 +51,20 @@ export default function ContainHistory() {
     setPosicionX2(posicionX2 - 1)
  }
 
+  const sendToBooks = (contenido)=>{
+       router.push(`/historia/${contenido.id}`)
+  }
+
   return (
     <div className='mt-10'> 
     <div className="flex items-center justify-between w-full mb-5">
-  <h2 className='text-center w-full font-black text-3xl'>Historias</h2>
+  <h2 className='w-full text-3xl font-black text-center'>Historias</h2>
     </div>
 
 <ContainDeslize next={nextCard} reverse={backCard}>
          {
             hist.slice(posicionX1,posicionX2).map((e,i)=>{
-                return <CardXL contenido={e} key={i}/>
+                return <CardXL contenido={e} key={i} callback={sendToBooks}/>
             })
          }
        </ContainDeslize>
