@@ -13,7 +13,7 @@ export default function FormRegister() {
   //permite hacer el redireccionamiento de las paginas
   const router = useRouter();
 
-  const username = localStorage.getItem("123");
+  const username = localStorage.getItem("token");
 
   // Si el usuario ya está logeado, redireccionarlo a la página de inicio
   if (username) {
@@ -51,8 +51,8 @@ export default function FormRegister() {
     setVerError(true);
   });
 
-    //localStorage.setItem("123", JSON.stringify(formState));
-    //router.push("/home");
+  
+    router.push("/");
   };
 
   return (

@@ -2,11 +2,35 @@
 import { TextTitle } from "../Atoms/Text.Title"
 import { CardsRoute } from "./CardsRoute"
 import ContainDeslize from "./ContainDeslize"
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import useWindowWidth from "@/hooks/useWindowWidth";
 export default function ContainRutas({arrayTitles}) {
 
   const [posicionX1,setPosicionX1] = useState(0);
   const [posicionX2,setPosicionX2] = useState(3);
+   const windowWidth = useWindowWidth()
+
+  useEffect(() => {
+
+    if (windowWidth > 1142) {
+      setPosicionX1(posicionX2 -3)
+    }
+    
+  if (windowWidth < 1115) {
+    setPosicionX1(posicionX2 -2)
+  }
+
+  if (windowWidth < 843) {
+    setPosicionX1(posicionX2 -1)
+  }
+  
+
+
+  
+     
+  
+    return () => {}
+  }, [windowWidth]);
   
  const nextCard = ()=>{
 
