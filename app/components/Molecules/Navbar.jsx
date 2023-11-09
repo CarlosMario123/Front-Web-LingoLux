@@ -20,13 +20,13 @@ export default function Navbar() {
     <More />
   ) : (
     <>
-      <Link href={"/home"} className="font-light text-black text-roboto">
+      <Link href={"/home"} className="font-normal text-white text-roboto text-[1.2rem]">
         Aprender
       </Link>
-      <Link href={"/sala"} className="font-light text-black text-roboto">
+      <Link href={"/sala"} className="font-normal text-white text-roboto text-[1.2rem]">
         Sala
       </Link>
-      <Link href={"/status"} className="font-light text-black text-roboto">
+      <Link href={"/status"} className="font-normal text-white text-roboto text-[1.2rem]">
         Estatus
       </Link>
       <Start cantidad={5} />

@@ -7,22 +7,28 @@ import ContainDeslize from "./ContainDeslize";
 import useWindowWidth from "@/hooks/useWindowWidth";
 
 export default function ContainDiccionary({ arrayDictionry }) {
+
+
   const windowWidth = useWindowWidth();
   const [posicionX1, setPosicionX1] = useState(0);
   const [posicionX2, setPosicionX2] = useState(5);
 
 
   useEffect(() => {
+    if(posicionX2-5 < 0){
+      setPosicionX2(5)
+      setPosicionX1(0)
+  }
 
-    if (windowWidth > 1142) {
+    if (windowWidth > 1103) {
       setPosicionX1(posicionX2 -5)
     }
     
-  if (windowWidth < 1142) {
+  if (windowWidth < 1103) {
     setPosicionX1(posicionX2 -4)
   }
   
-  if (windowWidth < 944) {
+  if (windowWidth < 974) {
     setPosicionX1(posicionX2 -3)
   }
 
@@ -63,11 +69,15 @@ export default function ContainDiccionary({ arrayDictionry }) {
       <div className="flex items-center justify-between w-full px-9">
         <TextTitle children={"Diccionarios"} />
       </div>
+    
+
+     
       <ContainDeslize next={nextCard} reverse={backCard}>
         {arrayDictionry.slice(posicionX1, posicionX2).map((word, index) => (
        <CardsDiccionary key={index} word={word} />
         ))}
       </ContainDeslize>
+
     </>
   );
 }

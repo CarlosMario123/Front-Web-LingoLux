@@ -11,6 +11,10 @@ export default function ContainRutas({arrayTitles}) {
    const windowWidth = useWindowWidth()
 
   useEffect(() => {
+    if(posicionX2-3 < 0){
+      setPosicionX2(3)
+      setPosicionX1(0)
+  }
 
     if (windowWidth > 1142) {
       setPosicionX1(posicionX2 -3)

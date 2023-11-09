@@ -6,7 +6,7 @@ import Navbar from "../Molecules/Navbar"
 
 export const Sala = () => {
   return (
-    <div className="w-screen pb-4">
+    <div className="w-full pb-4">
         <Navbar/>
        <ContainGame/>
        <ContainHistory/>

@@ -14,29 +14,37 @@ export default function ContainHistory() {
 
   const [posicionX1,setPosicionX1] = useState(0);
   const [posicionX2,setPosicionX2] = useState(3);
-  const [controlWidth,setWidth] = useState(3);
-
-  useEffect(()=>{
-    
-     if(windowWidth > 1120 && 3 != controlWidth){
-        setPosicionX2(posicionX2 + 1)
-        setWidth(3)
-     }
-
-    if(windowWidth <= 1115 && controlWidth != 2){
-           setPosicionX2(posicionX2 - 1)
-           setWidth(2)
-        }
-
-
-   
-  },[windowWidth])
+ 
   
- const nextCard = ()=>{
 
-  if(posicionX2 == hist.length || hist.slice(posicionX1,posicionX2).length != controlWidth){
-   return
+  useEffect(() => {
+    if(posicionX2-3 < 0){
+      setPosicionX2(3)
+      setPosicionX1(0)
   }
+    if (windowWidth > 1120) {
+      setPosicionX1(posicionX2 -3)
+    }
+    
+  if (windowWidth < 1120) {
+    setPosicionX1(posicionX2 -2)
+  }
+
+  if (windowWidth < 785) {
+    setPosicionX1(posicionX2 -1)
+  }
+
+  
+     
+  
+    return () => {}
+  }, [windowWidth]);
+ const nextCard = ()=>{
+  if (posicionX2 === hist.length) {
+    return;
+  }
+
+ 
     setPosicionX1(posicionX1 + 1);
     setPosicionX2(posicionX2 + 1)
  

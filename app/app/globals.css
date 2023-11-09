@@ -8,14 +8,15 @@
 /*css personalizado*/
 body {
     font-family: Roboto, sans-serif;
+    background-color: #e8e8ec;
   }
 
   .text-roboto{
     font-family: Roboto, sans-serif;
   }
 .color-basic{
-    background-color: #09FFFF;
-}
+  background: rgb(94,75,229);
+  background: linear-gradient(90deg, rgba(94,75,229,1) 100%, rgba(130,67,247,1) 100%);}
 
 .color-gradient{
   background: rgb(3,179,179);
@@ -42,7 +43,7 @@ background: linear-gradient(90deg, rgba(3,179,179,1) 33%, rgba(9,255,255,1) 100%
   border-radius: 15px;
 border: 0px solid #000;
 
-background: rgba(0, 255, 224, 0.90);
+background: white;
 
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -51,4 +52,9 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 border: 0px solid #000;
 background: #EFF5F5;
 box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.40);
+}
+
+.gradientCard{
+  background: rgb(110,4,244);
+  background: linear-gradient(90deg, rgba(110,4,244,1) 0%, rgba(69,47,227,1) 63%, rgba(84,62,245,1) 88%, rgba(103,84,244,1) 97%);
 }
