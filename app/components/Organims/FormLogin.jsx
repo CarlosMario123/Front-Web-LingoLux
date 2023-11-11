@@ -66,12 +66,13 @@ export default function FormLogin() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen color-gradient">
+    <div className="flex flex-col items-center justify-center w-screen h-screen gradientCard">
          {
         verError && <ErrorAlert msg={msg} setError={setVerError}/>
       }
-      <div className="p-4 bg-white rounded-md w-[20rem] h-96">
-        <h1 className="mb-2 text-2xl font-semibold text-center text-sky-400">
+      <div className="p-4 bg-white rounded-md w-[20rem] h-96 overflow-hidden">
+        <div className="relative top-0 right-[-170px] h-6 rotate-45 bg-purple-900 w-72"></div>
+        <h1 className="mb-2 text-2xl font-semibold text-center text-purple-900">
           Iniciar Sesión
         </h1>
         <div className="flex flex-col items-center gap-y-4 mt-14">
@@ -79,19 +80,19 @@ export default function FormLogin() {
             type="email"
             placeholder="Email"
             name="email"
-            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none bg-transparent"
+            className="p-1  text-[0.9rem] w-64 px-2 border-b border-purple-600 outline-none bg-transparent"
             onChange={inputChange}
           />
           <input
             type="password"
             placeholder="Password"
             name="contrasena"
-            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none bg-transparent"
+            className="p-1  text-[0.9rem] w-64 px-2 border-b border-purple-600 outline-none bg-transparent"
             onChange={inputChange}
           />
           <button
             onClick={enviarDatos}
-            className="p-1 mt-10 text-white rounded-sm bg-sky-500 w-36"
+            className="p-1 mt-10 text-white rounded-sm gradientCard w-36"
           >
             Iniciar Sesión
           </button>

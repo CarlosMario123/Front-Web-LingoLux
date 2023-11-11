@@ -6,6 +6,7 @@ import ErrorAlert from "../Molecules/ErrorAlert";
 import { useState } from "react";
 import Link from "next/link";
 export default function FormRegister() {
+
     
   //este estado nos permite manejar mensaje de errores
   const [msg,setMsg] = useState("");
@@ -56,10 +57,10 @@ export default function FormRegister() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen color-gradient">
-  
+    <div className={`flex flex-col items-center justify-center w-screen h-screen gradient1`}>
+ 
       <div className="p-4 bg-white rounded-md w-[20rem] h-96">
-        <h1 className="mb-2 text-2xl font-semibold text-center text-sky-400">
+        <h1 className="mb-2 text-2xl font-semibold text-center text-purple-900">
            Registro
         </h1>
         <div className="flex flex-col items-center gap-y-4 mt-14">
@@ -67,26 +68,26 @@ export default function FormRegister() {
             type="text"
             placeholder="Username"
             name="username"
-            className="p-1  text-[0.9rem] w-64 px-2  border-b border-sky-500 outline-none bg-transparent"
+            className="p-1  text-[0.9rem] w-64 px-2  border-b border-purple-600 outline-none bg-transparent"
             onChange={inputChange}
           />
           <input
             type="email"
             placeholder="Email"
             name="email"
-            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none bg-transparent"
+            className="p-1  text-[0.9rem] w-64 px-2 border-b border-purple-600  outline-none bg-transparent"
             onChange={inputChange}
           />
           <input
             type="password"
             placeholder="Password"
             name="contrasena"
-            className="p-1  text-[0.9rem] w-64 px-2 border-b border-sky-500 outline-none bg-transparent"
+            className="p-1  text-[0.9rem] w-64 px-2 border-b border-purple-600  outline-none bg-transparent"
             onChange={inputChange}
           />
           <button
             onClick={enviarDatos}
-            className="p-1 mt-10 text-white rounded-sm bg-sky-500 w-36"
+            className="p-1 mt-10 text-white rounded-sm gradientCard w-36"
           >
            Registrarse
           </button>
@@ -96,7 +97,7 @@ export default function FormRegister() {
       {
         verError && <ErrorAlert msg={msg} setError={setVerError}/>
       }
-      
+
     </div>
   );
 }

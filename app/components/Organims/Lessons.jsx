@@ -5,7 +5,7 @@ import { ContainLessons } from "../Molecules/ContainLessons";
 
 export const Leassons = ({leccion}) => {
   return (
-    <div className="w-screen bg-white">
+    <div className="">
       <Navbar/>
 
       <ContainLessons leccion={leccion}/>

@@ -58,3 +58,20 @@ box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.40);
   background: rgb(110,4,244);
   background: linear-gradient(90deg, rgba(110,4,244,1) 0%, rgba(69,47,227,1) 63%, rgba(84,62,245,1) 88%, rgba(103,84,244,1) 97%);
 }
+
+/*gradientes para el efecto*/
+.gradient1{
+  background: rgb(103,84,244);
+  background: linear-gradient(90deg, rgba(103,84,244,1) 0%, rgba(110,4,244,1) 35%, rgba(69,47,227,1) 57%, rgba(84,62,245,1) 95%);
+}
+
+/*animaciones para boton*/
+.botonBorde {
+  border: 0;
+  transition: border-color 0.3s ease;
+}
+
+.botonBorde:hover {
+  border-color: white;
+}
+
