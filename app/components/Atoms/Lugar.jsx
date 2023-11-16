@@ -2,7 +2,7 @@
 
 export default function Lugar(Props) {
   return (
-    <p className=" text-white w-72 p-1 font-medium text-center gradient1 rounded-md">
+    <p className="p-1 font-medium text-center text-white rounded-md  w-72 gradient1">
       {Props.texto}
     </p>
   )

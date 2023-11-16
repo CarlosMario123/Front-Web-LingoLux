@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Molecules/Navbar'
+import { GlobalState } from '@/components/Atoms/ContextoQuizz'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,7 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <GlobalState>
         {children}
+        </GlobalState>   
         </body>
     </html>
   )

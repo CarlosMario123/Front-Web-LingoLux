@@ -5,7 +5,7 @@ import Navbar from "../Molecules/Navbar"
 
 export default function Estatus() {
   return (
-    <div className="w-full ">
+    <div className="w-full">
         <Navbar/>
         <h1 className="py-2 text-2xl font-black text-center">Estatus</h1>
         <main className="flex flex-col flex-wrap items-center justify-center w-full px-2 mt-4 sm:px-6">

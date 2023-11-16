@@ -1,11 +1,12 @@
 "use client";
-
 import Link from "next/link";
 import UserImg from "../Atoms/UserImg";
 import Start from "../Atoms/Start";
 import More from "./More";
 import useWindowWidth from "@/hooks/useWindowWidth";
 import NavSide from "../Organims/NavSide";
+import Notificacion from "../Atoms/Notificacion";
+
 export default function Navbar() {
  
   const windowWidth = useWindowWidth();
@@ -13,7 +14,7 @@ export default function Navbar() {
    
     //aca se definira las rutas de los enlaces
   return (
-   
+
     <nav className="flex justify-end w-full px-4 py-2 color-basic">
         <div className="flex flex-row items-center gap-x-10">
 
@@ -42,8 +43,11 @@ export default function Navbar() {
        
        
         </div>
+   
        
+
+   <Notificacion/>
     </nav>
-    
+
   )
 }
