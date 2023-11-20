@@ -2,7 +2,7 @@ import OrganismoHistory from "@/components/Organims/OrganismoHistory";
 import ResouceNoFound from "@/components/Organims/ResouceNoFound";
 import axios from "axios";
 async function traerHistoria(id){
-    const url = `http://127.0.0.1:5000//historias/${id}`;
+    const url = `http://localhost:3000/API/libroHistorias/${id}`;
    const {data} = await axios.get(url)
    return data;
 }
@@ -14,6 +14,7 @@ export default async function HistoriaPage({params}) {
     try{
         const book = await traerHistoria(id);
         datos = book;
+        console.log("datos -1",book)
     }catch(e){
       return (<ResouceNoFound/>)
     }

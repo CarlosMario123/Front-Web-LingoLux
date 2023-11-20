@@ -8,13 +8,34 @@ import useWindowWidth from "@/hooks/useWindowWidth";
 import { useRouter } from "next/navigation";
 export default function ContainHistory() {
   const router = useRouter()
-  const [hist,setHi] = useState(historias());
+  const [hist,setHi] = useState([]);
    
   const windowWidth = useWindowWidth();
 
   const [posicionX1,setPosicionX1] = useState(0);
   const [posicionX2,setPosicionX2] = useState(3);
- 
+
+  useEffect(() => {
+    const recibir = async () => {
+      try {
+        let datos = await historias();
+        
+         console.log("datos: ",datos.libros)
+     
+          const usar = datos.libros.map((e) => ({
+            url: 'https://static.vecteezy.com/system/resources/previews/017/744/893/original/open-book-illustration-png.png',
+            name: e.titulo,
+            id: e._id,
+          }));
+    
+      console.log("usar",usar)
+        setHi(usar);
+      } catch (error) {
+        console.error('Error al recibir historias:', error);
+      }
+    };
+    recibir();
+  }, []);
   
 
   useEffect(() => {
@@ -71,9 +92,10 @@ export default function ContainHistory() {
 
 <ContainDeslize next={nextCard} reverse={backCard}>
          {
-            hist.slice(posicionX1,posicionX2).map((e,i)=>{
-                return <CardXL contenido={e} key={i} callback={sendToBooks}/>
-            })
+      (hist.slice(posicionX1,posicionX2).map((e,i)=>{
+            return <CardXL contenido={e} key={i} callback={sendToBooks}/>
+        }))
+            
          }
        </ContainDeslize>
        

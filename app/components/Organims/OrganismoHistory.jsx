@@ -10,14 +10,15 @@ export default function OrganismoHistory({data}) {
 
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <Navbar/>
 
       <div className="style-lessons w-10/12 mt-12 rounded-md h-[26rem]">
-     <TituloRect texto={data.name}/>
-       <p className="my-2 px-3 w-full">{(traducir) ? data.eng : data.esp}</p>
+  
+     <h1 className="w-full px-2 py-1 text-white gradient1 text-[1.3rem] font-mono font-semibold rounded-t-md">{data.libro.titulo}</h1>
+       <p className="w-full px-3 my-2 font-mono">{(traducir) ? data.libro.contenido[0].contenidoIng: data.libro.contenido[0].contenidoEsp}</p>
       </div>
-      <button className="bg-[#00D1FF] text-white py-1 px-2 mt-4 rounded-md text-2xl" onClick={()=>  setTraducir(!traducir)}>Traducir</button>
+      <button className="px-2 py-1 mt-4 text-2xl text-white rounded-md gradient1" onClick={()=>  setTraducir(!traducir)}>Traducir</button>
     </div>
   )
 }

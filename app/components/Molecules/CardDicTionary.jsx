@@ -5,9 +5,9 @@ export default function CardDictionary({word}) {
  
         <div className="flex h-[12rem] rounded-md shadow-lg card-style sm:w-[11rem] w-64 flex-col justify-center items-center">
        
-            <Image src={manzana} width={70} height={70} />
-            <p className = "mt-2 font-semibold text-center text-gray-600"> { word.espanol} </p>
-            <p className = "mt-2 font-semibold text-center text-gray-600"> { word.ingles} </p>
+            <img src={word.url} width={80} height={75} />
+            <p className = "mt-2 font-semibold text-center text-gray-600"> { word.contenidoEsp} </p>
+            <p className = "mt-2 font-semibold text-center text-gray-600"> { word.contenidoIng} </p>
         </div>
   )
 }

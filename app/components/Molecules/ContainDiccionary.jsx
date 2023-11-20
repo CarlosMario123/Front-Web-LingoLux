@@ -8,12 +8,19 @@ import useWindowWidth from "@/hooks/useWindowWidth";
 
 export default function ContainDiccionary({ arrayDictionry }) {
 
-
+  const [datos,setDatos] = useState(arrayDictionry)
   const windowWidth = useWindowWidth();
   const [posicionX1, setPosicionX1] = useState(0);
   const [posicionX2, setPosicionX2] = useState(5);
-
-
+  
+  
+   useEffect(()=>{
+  
+      setDatos(arrayDictionry)
+      console.log("en el efecto")
+      console.log(datos)
+      return ()=>{}
+   },[])
   useEffect(() => {
     if(posicionX2-5 < 0){
       setPosicionX2(5)
@@ -73,7 +80,7 @@ export default function ContainDiccionary({ arrayDictionry }) {
 
      
       <ContainDeslize next={nextCard} reverse={backCard}>
-        {arrayDictionry.slice(posicionX1, posicionX2).map((word, index) => (
+        {datos.slice(posicionX1, posicionX2).map((word, index) => (
        <CardsDiccionary key={index} word={word} />
         ))}
       </ContainDeslize>
