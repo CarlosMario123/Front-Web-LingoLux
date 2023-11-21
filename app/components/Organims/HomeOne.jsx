@@ -48,43 +48,43 @@ export const HomeOne = () => {
       ]
 
       const arrayDictionry = [ {
-        titulo: "Presente Simple 51",
-        url: utilesI
+          titulo: "Presente Simple 51",
+          url: utilesI
         }
         ,
         {
           titulo: "Presente Simple 25",
           url: utilesI
-          }
-          , {
-            titulo: "Presente Simple 43",
-            url: utilesI
-            }
-            , {
-              titulo: "Presente Simple 4",
-              url: utilesI
-              }
-              , {
-                titulo: "Presente Simple 34",
-                url: utilesI
-                }
-                , {
-                  titulo: "Presente Simple 21",
-                  url: utilesI
-                  }
-                  , {
-                    titulo: "Presente Simple 5",
-                    url: utilesI
-                    }
-                    , {
-                      titulo: "Presente Simple 6",
-                      url: utilesI
-                      }
-                      , {
-                        titulo: "Presente Simple 7",
-                        url: utilesI
-                        }
-              ]
+        },
+        {
+          titulo: "Presente Simple 43",
+          url: utilesI
+        },
+        {
+          titulo: "Presente Simple 4",
+          url: utilesI
+        },
+        {
+          titulo: "Presente Simple 34",
+          url: utilesI
+        },
+        {
+          titulo: "Presente Simple 21",
+          url: utilesI
+        },
+        {
+          titulo: "Presente Simple 5",
+          url: utilesI
+        },
+        {
+          titulo: "Presente Simple 6",
+          url: utilesI
+        },
+        {
+          titulo: "Presente Simple 7",
+          url: utilesI
+        }
+]
 
       const arrayWords = [
         { ingles: 'Hello', espanol: 'Hola' },
