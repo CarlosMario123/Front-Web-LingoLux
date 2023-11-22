@@ -9,7 +9,7 @@ export function dataExtern(){
         {
             name:"Apuntes",
             url:"https://images.vexels.com/media/users/3/128313/isolated/preview/01fb3e375286d98cbc46c50e917db249-icono-plano-de-cuaderno.png",
-            urlPage:"/recursosExt"
+            urlPage:"/cuaderno"
         },
         {
             name:"Quiz rapido",

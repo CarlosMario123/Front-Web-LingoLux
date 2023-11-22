@@ -27,8 +27,7 @@ export default function ContainHistory() {
             name: e.titulo,
             id: e._id,
           }));
-    
-      console.log("usar",usar)
+
         setHi(usar);
       } catch (error) {
         console.error('Error al recibir historias:', error);
