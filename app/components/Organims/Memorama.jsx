@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { CardMemorama } from '../Molecules/CardMemorama';
 import { data } from '@/js/dataMemorama';
+import Navbar from '../Molecules/Navbar';
 
 export const Memorama = () => {
 
@@ -86,6 +87,7 @@ export const Memorama = () => {
 
   return (
     <div className= 'h-screen'>
+      <Navbar/>
      <h1 className="text-4xl font-bold mb-2 text-center">Memorama</h1>
 
      {isLoadingData && ( // Mostrar loader mientras se cargan los datos
