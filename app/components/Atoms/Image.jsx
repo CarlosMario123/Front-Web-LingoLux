@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Image = ({ src, word }) => {
+const Imagen = ({ src, word }) => {
   return (
     <>
-    <img className='h-10 w-10' src={src} alt=""  />
-    <p> { word } </p>
+    <img className=' h-36 w-36 rounded-md' src={src} alt=""  />
+    <p className = ' text-center uppercase font-bold '> { word } </p>
     </>
   )
 }
 
-export default Image
+export default Imagen
