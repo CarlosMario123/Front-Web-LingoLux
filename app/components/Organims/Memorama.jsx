@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { CardMemorama } from '../Molecules/CardMemorama';
-import { images } from '@/dataFalse/import';
+import { data } from '@/js/dataMemorama';
 
 export const Memorama = () => {
 
@@ -11,6 +11,7 @@ export const Memorama = () => {
     const [unflippedCards, setUnflippedCards] = useState([]);
     const [disabledCards, setDisabledCards] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [isLoadingData, setIsLoadingData] = useState(true); // Nuevo estado
   
     const shuffleArray = (array) => {
       for (let i = array.length - 1; i > 0; i--) {
@@ -22,10 +23,22 @@ export const Memorama = () => {
     };
   
     useEffect(() => {
-      shuffleArray(images);
-      setCards(images);
+      const consumoAPI = async () => {
+        try {
+          const api = await data();
+          console.log("API data:", api); // Agregamos un log aquí
+          shuffleArray(api);
+          setCards(api);
+          setIsLoadingData(false); 
+        } catch (err) {
+          console.error("Error en el front", err);
+        }
+      };
+    
+      console.log("Before API call, cards:", cards); // Agregamos un log aquí
+      consumoAPI();
     }, []);
-  
+    
     useEffect(() => {
       checkForMatch();
     }, [secondCard]);
@@ -65,7 +78,6 @@ export const Memorama = () => {
     };
   
     const handleSubmit = () => {
-      setIsLoading(true);
       setTimeout(() => {
         window.location.reload();
       }, 1000);
@@ -73,19 +85,26 @@ export const Memorama = () => {
   
 
   return (
-    <>
-     <h1 className="text-4xl font-bold mb-4">Memorama</h1>
+    <div className= 'h-screen'>
+     <h1 className="text-4xl font-bold mb-2 text-center">Memorama</h1>
+
+     {isLoadingData && ( // Mostrar loader mientras se cargan los datos
+        <div className="fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-500 flex items-center justify-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-600 border-solid"></div>
+        </div>
+      )}
+
       <div className="flex flex-wrap">
         {cards.map((card, index) => (
           <CardMemorama
             key={index}
-            name={card.player}
+            name={card.nombre}
             number={index}
-            frontFace={card.src}
+            frontFace={card.imagen}
             flipCard={flipCard}
             unflippedCards={unflippedCards}
             disabledCards={disabledCards}
-            word = { card.word }
+            word = { card.palabra }
           />
         ))}
       </div>
@@ -96,12 +115,15 @@ export const Memorama = () => {
         </div>
       )}
 
+        <div className=" flex justify-center items-center ">
+      {/* Asegura que el contenido esté centrado vertical y horizontalmente */}
       <input
-        className="mt-5 w-30 bg-blue-800 p-3 uppercase font-bold text-white text-lg hover:cursor-pointer"
+        className="mt-8 mb-8 w-30 bg-blue-800 p-3 uppercase font-bold text-white text-lg hover:cursor-pointer rounded-md"
         type="submit"
         value="Reiniciar"
         onClick={handleSubmit}
       />
-    </>
+    </div>
+    </div>
   )
 }

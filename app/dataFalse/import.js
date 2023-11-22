@@ -5,22 +5,22 @@ import src2 from '../recursos/img/2.png';
 const images = [
   {
     src: src1,
-    player: 'Real',
+    id: '1',
     word: 'Cat'
   },
   {
     src: src1,
-    player: 'Real',
+    id: '1',
     word: 'Gato'
   },
   {
     src: src2,
-    player: 'AtlM',
+    id: '2',
     word: 'Hello'
   },
   {
     src: src2,
-    player: 'AtlM',
+    id: 'AtlM',
     word: 'Hola'
 
   },
