@@ -1,5 +1,6 @@
 "use client"
 
+
 import { contextGlobal } from "../Atoms/ContextoQuizz";
 import Link from "next/link";
 import { QuizzWord} from "@/js/quiizzWord";
@@ -12,6 +13,7 @@ export default function Quizz()
     const [questions,setQuestions] = useState([]);
     const [puntos,setPuntos] = useState(0);
     const [result,setResult] = useState("");
+
     
     useEffect(()=>{
       console.log(state)
@@ -25,6 +27,7 @@ export default function Quizz()
       if(state.length != index){
         if(state[index].spanish == word){
             setPuntos(puntos + 1)
+           
             setResult("Correcto")
         }else{
           setResult("incorrecto")
@@ -62,7 +65,7 @@ export default function Quizz()
           {
             (index < state.length -1) ? (  questions.map((e,index)=>{
               return <Answer respuesta={e} key={index} evaluar={evaluarResultado}/>
-            })) : (<div className="flex flex-col"><p className="font-mono text-2xl font-bold">Tu puntaje fue de : {puntos}</p>
+            })) : (<div className="flex flex-col"><p className="font-mono text-2xl font-bold">Tu puntaje fue de {puntos} : {state.length - 1} </p>
   
             </div>)
            
@@ -73,7 +76,7 @@ export default function Quizz()
         }
        
       </div>
-     
+  
     </div>
   )
 }

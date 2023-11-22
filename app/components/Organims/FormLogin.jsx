@@ -51,9 +51,13 @@ export default function FormLogin() {
 
        
         const extraerToken =response.data.token
+        const extraerId = response.data.usuario.id;
 
         //guardamos el token
         localStorage.setItem("token", JSON.stringify(extraerToken ));
+
+        //guardamos el id del usuario
+        localStorage.setItem("id", JSON.stringify(extraerId));
         router.push("/home");
   
       }).catch((error)=>{

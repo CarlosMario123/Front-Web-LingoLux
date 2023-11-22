@@ -1,9 +1,8 @@
+import { RecursosExternos } from "@/components/Organims/RecursosExternos";
 
+export default async function ResourceExtPage() {
 
-export default function ResourceExtPage() {
   return (
-    <div>
-      
-    </div>
-  )
+     <RecursosExternos/>
+  );
 }
