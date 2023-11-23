@@ -18,7 +18,7 @@ export default function QuestionLessons({preguntas})
     const [puntos,setPuntos] = useState(0);
     useEffect(() => {
         const token = localStorage.getItem("token");
-        console.log("token", token);
+ 
         const formattedToken = token.slice(1, token.length - 1);
       
         const peticiones = preguntas.map((pregunta) => {
@@ -39,7 +39,7 @@ export default function QuestionLessons({preguntas})
           })
           .then((data) => {
               
-             console.log("data")
+         
           const convertido =   data.map((e)=>{
                  return e.pregunta
              })
@@ -70,10 +70,10 @@ export default function QuestionLessons({preguntas})
       const evaluarResultado = (word)=>{
         if(preguntas2.length != indice){
           if(correctas[indice] == word){
-                console.log("adivino")
+             
                 setPuntos(puntos + 1)
           }else{
-                 console.log("mala")
+                 
           }
        
         }else{
@@ -105,14 +105,14 @@ export default function QuestionLessons({preguntas})
   return (
 
     <div className="flex flex-col items-center w-full h-screen px-2 pt-2 rounded-md ">
-
+         {
+                 preguntas2 &&  <h1 className="mt-4 font-mono text-2xl font-black text-center">{preguntas2[indice]}</h1>
+              }
        
       {
         !informacion ? (<p>Cargando...</p>): (
             <div className="flex flex-wrap items-center justify-center w-8/12 mt-12 xl:gap-x-16 xl:gap-y-16 gap-x-2 gap-y-5">
-                 {
-                 preguntas2 &&  <h1 className="mt-4 font-mono text-2xl font-black text-center">{preguntas2[indice]}</h1>
-              }
+               
               
               {
                 opciones && respuestas[indice].map((e,i)=>{

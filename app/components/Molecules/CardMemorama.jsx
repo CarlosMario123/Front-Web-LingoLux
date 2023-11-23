@@ -34,7 +34,7 @@ export const CardMemorama = ({
       }
 
   return (
-    <div className=" inline-block m-2 h-32 w-32 cursor-pointer px-2">
+    <div className=" inline-block m-7 h-32 w-32 cursor-pointer px-2">
 
         <ReactCardFlip isFlipped = {isFlipped}>
 

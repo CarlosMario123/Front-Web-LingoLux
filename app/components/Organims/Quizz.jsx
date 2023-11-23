@@ -16,7 +16,7 @@ export default function Quizz()
 
     
     useEffect(()=>{
-      console.log(state)
+ 
       if(state.length != index){
         setQuestions(QuizzWord(state,index))
       }
@@ -35,7 +35,7 @@ export default function Quizz()
         setIndex(index+1);
       }else{
         setState([])
-        console.log("ya no se puede seguir recorriendo")
+  
       }
       
     }

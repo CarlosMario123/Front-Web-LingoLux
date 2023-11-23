@@ -57,34 +57,31 @@ export default function ContainDiccionary({ arrayDictionry }) {
     if (posicionX2 === arrayDictionry.length) {
       return;
     }
-    setPosicionX1(posicionX1 + 1);
-    setPosicionX2(posicionX2 + 1);
+    const newPosX2 = Math.min(posicionX2 + 1, arrayDictionry.length);
+    setPosicionX1(newPosX2 - 5);
+    setPosicionX2(newPosX2);
   }
-
+  
   const backCard = () => {
     if (posicionX1 === 0) {
       return;
     }
-    setPosicionX1(posicionX1 - 1);
-    setPosicionX2(posicionX2 - 1);
+    const newPosX1 = Math.max(posicionX1 - 1, 0);
+    setPosicionX1(newPosX1);
+    setPosicionX2(newPosX1 + 5);
   }
-
-
-
+  
   return (
     <>
       <div className="flex items-center justify-between w-full px-9">
         <TextTitle children={"Diccionarios"} />
       </div>
-    
-
-     
+  
       <ContainDeslize next={nextCard} reverse={backCard}>
         {datos.slice(posicionX1, posicionX2).map((word, index) => (
-       <CardsDiccionary key={index} word={word} />
+          <CardsDiccionary key={index} word={word} />
         ))}
       </ContainDeslize>
-
     </>
-  );
-}
+  )
+        }

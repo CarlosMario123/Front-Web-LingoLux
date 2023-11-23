@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-const palabrasIniciales = ['hola', 'elefante', 'montaña', 'bicicleta', 'computadora'];
+const palabrasIniciales =["apple", "banana", "orange", "grape", "strawberry", "pineapple", "watermelon", "kiwi", "melon", "peach", "plum", "pear", "cherry", "blueberry", "raspberry", "blackberry", "lemon", "lime", "coconut", "mango", "papaya", "apricot", "fig", "nectarine", "cranberry", "tangerine", "avocado", "guava", "persimmon", "dragonfruit"]
 const indiceInicial = 0;
 
 export const WordGuess = () => {

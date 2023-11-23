@@ -13,7 +13,7 @@ export default function OrganismoHistory({data}) {
     <div className="flex flex-col items-center w-full">
       <Navbar/>
 
-      <div className="style-lessons w-10/12 mt-12 rounded-md h-[26rem]">
+      <div className="style-lessons w-10/12 mt-12 rounded-md h-[26rem] overflow-y-auto">
   
      <h1 className="w-full px-2 py-1 text-white gradient1 text-[1.3rem] font-mono font-semibold rounded-t-md">{data.libro.titulo}</h1>
        <p className="w-full px-3 my-2 font-mono">{(traducir) ? data.libro.contenido[0].contenidoIng: data.libro.contenido[0].contenidoEsp}</p>

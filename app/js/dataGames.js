@@ -2,18 +2,18 @@ export function dataGame(){
    
     const data = [
         {
-            name:"ahorcado",
-            ruta: "",
+            name:"memorama",
+            ruta: "/memorama",
             url:"https://cdn-icons-png.flaticon.com/512/3790/3790278.png",
         },
         {
-            name:"ahorcado",
-            ruta: "",
+            name:"wordGuess",
+            ruta: "/wordGuess",
             url:"https://cdn-icons-png.flaticon.com/512/3790/3790278.png",
         },
         {
-            name:"ahorcado",
-            ruta: "",
+            name:"En desarrollo",
+            ruta: "/sala",
             url:"https://cdn-icons-png.flaticon.com/512/3790/3790278.png",
         },
     ]

@@ -23,7 +23,7 @@ export const ContainLessons = ({nombre,lecciones,setStart}) => {
     const formattedToken = token.slice(1, token.length - 1);
   
     const peticiones = lecciones.map((leccion) => {
-      return `http://localhost:3000/api/temas/?id=${leccion}`;
+      return `http://localhost:3000/api/temas/${leccion}`;
     });
   
     const promesas = peticiones.map((peticion) => {
@@ -39,12 +39,13 @@ export const ContainLessons = ({nombre,lecciones,setStart}) => {
         return Promise.all(respuestas.map((respuesta) => respuesta.json()));
       })
       .then((data) => {
-   
-        setRespuestas(data[0]);
+        console.log("datos")
+        console.log(data[1])
+        setRespuestas(data);
         setIndex(0); // Establecer el índice inicial al cargar los datos
-        setCuerpo(data[0].temas[0].cuerpo);
-        setImagenes(data[0].temas[0].imagen);
-        setName(data[0].temas[0].nombre);
+        setCuerpo(data[0].tema.cuerpo);
+        setImagenes(data[0].tema.imagen);
+        setName(data[0].tema.nombre);
   
       })
       .catch((error) => {
@@ -56,11 +57,11 @@ export const ContainLessons = ({nombre,lecciones,setStart}) => {
     const newIndex = index + 1;
   
     setIndex(newIndex);
-    if (index < respuestas.temas.length - 1) {
-      console.log(respuestas.temas[newIndex].imagen)
-      setCuerpo(respuestas.temas[newIndex].cuerpo);
-      setImagenes(respuestas.temas[newIndex].imagen);
-      setName(respuestas.temas[newIndex].nombre);
+    if (index < respuestas.length - 1) {
+      console.log(respuestas[newIndex].tema.imagen)
+      setCuerpo(respuestas[newIndex].tema.cuerpo);
+      setImagenes(respuestas[newIndex].tema.imagen);
+      setName(respuestas[newIndex].tema.nombre);
     }else{
         setReady(true)
     }
@@ -70,9 +71,9 @@ export const ContainLessons = ({nombre,lecciones,setStart}) => {
     if (index > 0) {
       const newIndex = index - 1;
       setIndex(newIndex);
-      setCuerpo(respuestas.temas[newIndex].cuerpo);
-      setImagenes(respuestas.temas[newIndex].imagen);
-      setName(respuestas.temas[newIndex].nombre);
+      setCuerpo(respuestas[newIndex].tema.cuerpo);
+      setImagenes(respuestas[newIndex].tema.imagen);
+      setName(respuestas[newIndex].tema.nombre);
     }
   };
 
@@ -80,9 +81,9 @@ export const ContainLessons = ({nombre,lecciones,setStart}) => {
   const regresar = ()=>{
     setReady(false)
     setIndex(0);
-    setCuerpo(respuestas.temas[0].cuerpo);
-    setImagenes(respuestas.temas[0].imagen);
-    setName(respuestas.temas[0].nombre);
+    setCuerpo(respuestas[0].tema.cuerpo);
+    setImagenes(respuestas[0].tema.imagen);
+    setName(respuestas[0].tema.nombre);
   }
   
 

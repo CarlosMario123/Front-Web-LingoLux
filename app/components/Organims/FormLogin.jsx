@@ -5,20 +5,18 @@ import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
 import ErrorAlert from "../Molecules/ErrorAlert";
-export default function FormLogin() {
-     
-   //este estado nos permite manejar mensaje de errores
-   const [msg,setMsg] = useState("");
-   const[verError,setVerError] = useState(false)
-  //permite hacer el redireccionamiento de las paginas
-  const router = useRouter();
 
+export default function FormLogin() {
+  const [msg, setMsg] = useState("");
+  const [verError, setVerError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const router = useRouter();
   const username = localStorage.getItem("token");
 
-  // Si el usuario ya está logeado, redireccionarlo a la página de inicio
   if (username) {
     router.push("/home");
-    return;
+    return null; // En caso de redireccionamiento, no se renderizará el resto del componente
   }
 
   const { formState, inputChange } = useForm({
@@ -27,55 +25,39 @@ export default function FormLogin() {
   });
 
   const enviarDatos = (e) => {
-    e.preventDefault()
-    //http://localhost:3000/API/usuarios/login
-    //evaluamos que tenga algo los datos
-      if(formState.email == "" || formState.contrasena == ""){
-        alert("favor de llenar lo campos restantes por favor")
-        return
-      }
-      //cremamos un objeto antes de enviarlo
-      const usuario = {
-        correo:formState.email,
-        password:formState.contrasena
-      };
-        
-      console.log(usuario)
-     
-      //aca enviaremos la info para inicio de seccion
+    e.preventDefault();
+    if (formState.email === "" || formState.contrasena === "") {
+      alert("Favor de llenar los campos restantes por favor");
+      return;
+    }
 
-      axios.post("http://localhost:3000/API/usuarios/login", usuario)
+    const usuario = {
+      correo: formState.email,
+      password: formState.contrasena,
+    };
+
+    axios.post("http://localhost:3000/API/usuarios/login", usuario)
       .then((response) => {
-        console.log("inicio de seccion correcto");
-       
-
-       
-        const extraerToken =response.data.token
+        const extraerToken = response.data.token;
         const extraerId = response.data.usuario.id;
 
-        //guardamos el token
-        localStorage.setItem("token", JSON.stringify(extraerToken ));
-
-        //guardamos el id del usuario
+        localStorage.setItem("token", JSON.stringify(extraerToken));
         localStorage.setItem("id", JSON.stringify(extraerId));
-        router.push("/home");
-  
-      }).catch((error)=>{
-         setMsg(error.response.data.msg)
-         setVerError(true);
-      })
-     
-    //localStorage.setItem("123", JSON.stringify(formState));
-    //router.push("/home");
+        router.push("/foto");
+      }).catch((error) => {
+        setMsg(error.response.data.msg);
+        setVerError(true);
+      });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen gradientCard">
-         {
-        verError && <ErrorAlert msg={msg} setError={setVerError}/>
-      }
+      {verError && <ErrorAlert msg={msg} setError={setVerError}/>}
       <div className="p-4 bg-white rounded-md w-[20rem] h-96 overflow-hidden">
-        <div className="relative top-0 right-[-170px] h-6 rotate-45 bg-purple-900 w-72"></div>
         <h1 className="mb-2 text-2xl font-semibold text-center text-purple-900">
           Iniciar Sesión
         </h1>
@@ -88,12 +70,19 @@ export default function FormLogin() {
             onChange={inputChange}
           />
           <input
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             placeholder="Password"
             name="contrasena"
-            className="p-1  text-[0.9rem] w-64 px-2 border-b border-purple-600 outline-none bg-transparent"
+            className="p-1  text-[0.9rem] w-64 px-2 border-b border-purple-600 outline-none bg-transparent text-black" 
             onChange={inputChange}
           />
+          <button
+            type="button"
+            onClick={togglePasswordVisibility}
+            className="mt-2 text-sm text-purple-900 focus:outline-none"
+          >
+            {showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+          </button>
           <button
             onClick={enviarDatos}
             className="p-1 mt-10 text-white rounded-sm gradientCard w-36"
@@ -103,7 +92,6 @@ export default function FormLogin() {
           <Link href={"/registro"}>Registrarse</Link>
         </div>
       </div>
-   
     </div>
   );
 }

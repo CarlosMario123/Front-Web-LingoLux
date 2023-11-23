@@ -29,7 +29,6 @@ export default function ContainRutas() {
           );
           setArrayRutas(response.data.lecciones);
          
-          console.log("respuesta exitosa", response.data);
         } else {
           console.log("token no usado pai");
         }
@@ -64,31 +63,36 @@ export default function ContainRutas() {
     return () => {};
   }, [windowWidth]);
 
-  const nextCard = () => {
-    if (posicionX2 == arrayTitles.length) {
-      return;
-    }
-    setPosicionX1(posicionX1 + 1);
-    setPosicionX2(posicionX2 + 1);
-  };
+  // Resto de tu código ...
 
-  const backCard = () => {
-    if (posicionX1 == 0) {
-      return;
-    }
-    setPosicionX1(posicionX1 - 1);
-    setPosicionX2(posicionX2 - 1);
-  };
-  return (
-    <>
-      <div className="flex items-center justify-between w-full px-9">
-        <TextTitle children={"Ruta de Viaje"} />
-      </div>
-      <ContainDeslize next={nextCard} reverse={backCard}>
-        {arrayRutas.slice(posicionX1, posicionX2).map((e, i) => (
-          <CardsRoute key={i} leccion={e} />
-        ))}
-      </ContainDeslize>
-    </>
-  );
-}
+const nextCard = () => {
+  if (posicionX2 === arrayRutas.length) {
+    return;
+  }
+  const newPosX2 = Math.min(posicionX2 + 1, arrayRutas.length);
+  setPosicionX1(newPosX2 - 3);
+  setPosicionX2(newPosX2);
+};
+
+const backCard = () => {
+  if (posicionX1 === 0) {
+    return;
+  }
+  const newPosX1 = Math.max(posicionX1 - 1, 0);
+  setPosicionX1(newPosX1);
+  setPosicionX2(newPosX1 + 3);
+};
+
+return (
+  <>
+    <div className="flex items-center justify-between w-full px-9">
+      <TextTitle children={"Ruta de Viaje"} />
+    </div>
+    <ContainDeslize next={nextCard} reverse={backCard}>
+      {arrayRutas.slice(posicionX1, posicionX2).map((e, i) => (
+        <CardsRoute key={i} leccion={e} />
+      ))}
+    </ContainDeslize>
+  </>
+);
+      }

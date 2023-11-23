@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { contextGlobal } from "./ContextoQuizz";
 
-const socket = io('http://localhost:3000');
+const socket = io('http://localhost:3002');
 
 
 export default function Notificacion() {
@@ -20,7 +20,7 @@ export default function Notificacion() {
       if(newWordPair){
         setState(newWordPair)
       } else {
-        console.log("en espera");
+     
       }
     });
 

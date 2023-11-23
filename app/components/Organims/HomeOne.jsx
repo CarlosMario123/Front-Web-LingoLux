@@ -15,8 +15,7 @@ export const HomeOne = () => {
     fetch("http://localhost:3000/API/libroVocabulario")
       .then((response) => response.json())
       .then((data) => {
-        console.log("Se recibió la data del diccionario");
-        console.log(data.libros);
+       
         setArrayDictionary(data.libros);
       })
       .catch((error) => console.error("Error al obtener datos del diccionario:", error));

@@ -4,9 +4,11 @@ import CardXL from './CardXL'
 import ContainDeslize from './ContainDeslize'
 import { TextTitle } from '../Atoms/Text.Title'
 import { dataGame } from '@/js/dataGames'
+import { useRouter } from "next/navigation"
 import useWindowWidth from '@/hooks/useWindowWidth'
+
 export default function ContainGame() {
-  
+   const router = useRouter()
   
 
     const [infoGame,setInfoGame] = useState(dataGame())
@@ -62,6 +64,10 @@ export default function ContainGame() {
       setPosicionX1(posicionX1-1)
       setPosicionX2(posicionX2 - 1)
    }
+
+     const reenviar = (e)=>{
+         router.push(e.ruta)
+     }
      
   return (
     <div className='mt-10'> 
@@ -72,7 +78,7 @@ export default function ContainGame() {
        <ContainDeslize next={nextCard} reverse={backCard}>
         {
            infoGame.slice(posicionX1,posicionX2).map((e,i)=>{
-            return <CardXL contenido={e}/>
+            return <CardXL contenido={e} callback={reenviar}/>
            })
         }
        </ContainDeslize>
