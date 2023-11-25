@@ -29,3 +29,12 @@ escribimos en nuestra consola el siguiente comando: npm run dev
 <p width = "100vw"  align="center"> <img src="https://img.icons8.com/color/100/000000/npm.png"/> <img src="https://img.icons8.com/color/100/000000/tailwindcss.png"/>
 <img src="https://img.icons8.com/color/100/000000/nextjs.png"/>                                                                                                                                      
 </p>
+
+<h2>Vistas de ejemplo</h2>
+<p>
+  <img src = "https://github.com/CarlosMario123/Front-Web-LingoLux/blob/main/vistasAPP/Captura%20de%20pantalla%20(152).png?raw=true"/>
+   <img src = ["https://github.com/CarlosMario123/Front-Web-LingoLux/blob/main/vistasAPP/Captura%20de%20pantalla%20(152).png?raw=true](https://github.com/CarlosMario123/Front-Web-LingoLux/blob/main/vistasAPP/Captura%20de%20pantalla%20(151).png?raw=true)"/>
+   <img src = "https://github.com/CarlosMario123/Front-Web-LingoLux/blob/main/vistasAPP/Captura%20de%20pantalla%20(152).png?raw=true"/>
+
+  <img src = "https://github.com/CarlosMario123/Front-Web-LingoLux/blob/main/vistasAPP/Captura%20de%20pantalla%20(153).png?raw=true"/>
+</p>
