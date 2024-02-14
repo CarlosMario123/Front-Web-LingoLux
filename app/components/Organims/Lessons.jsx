@@ -21,7 +21,7 @@ export const Leassons = ({leccion}) => {
       try {
         if (token) {
           const response = await axios.get(
-            `http://localhost:3000/API/lecciones/${leccion}`,
+            `http://localhost:10000/API/lecciones/${leccion}`,
             {
               headers: {
                 Authorization: token,

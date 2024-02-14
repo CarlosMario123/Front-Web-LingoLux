@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { contextGlobal } from "./ContextoQuizz";
 
-const socket = io('http://localhost:3002');
+const socket = io('http://localhost:10000');
 
 
 export default function Notificacion() {

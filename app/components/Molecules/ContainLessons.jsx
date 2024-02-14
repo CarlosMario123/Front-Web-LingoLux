@@ -23,7 +23,7 @@ export const ContainLessons = ({nombre,lecciones,setStart}) => {
     const formattedToken = token.slice(1, token.length - 1);
   
     const peticiones = lecciones.map((leccion) => {
-      return `http://localhost:3000/api/temas/${leccion}`;
+      return `http://localhost:10000/api/temas/${leccion}`;
     });
   
     const promesas = peticiones.map((peticion) => {

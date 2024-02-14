@@ -88,39 +88,40 @@ export const Memorama = () => {
   return (
     <div className= 'h-screen'>
       <Navbar/>
-     <h1 className="text-4xl font-bold mb-2 text-center">Memorama</h1>
+     <h1 className="mb-2 text-4xl font-bold text-center">Memorama</h1>
 
      {isLoadingData && ( // Mostrar loader mientras se cargan los datos
-        <div className="fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-500 flex items-center justify-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-600 border-solid"></div>
+        <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-gray-500 bg-opacity-50">
+          <div className="w-16 h-16 border-t-2 border-blue-600 border-solid rounded-full animate-spin"></div>
         </div>
       )}
 
-      <div className="flex flex-wrap">
-        {cards.map((card, index) => (
-          <CardMemorama
-            key={index}
-            name={card.nombre}
-            number={index}
-            frontFace={card.imagen}
-            flipCard={flipCard}
-            unflippedCards={unflippedCards}
-            disabledCards={disabledCards}
-            word = { card.palabra }
-          />
-        ))}
-      </div>
+<div className="grid justify-center grid-cols-6 gap-4">
+  {cards.map((card, index) => (
+    <CardMemorama
+      key={index}
+      name={card.nombre}
+      number={index}
+      frontFace={card.imagen}
+      flipCard={flipCard}
+      unflippedCards={unflippedCards}
+      disabledCards={disabledCards}
+      word={card.palabra}
+    />
+  ))}
+</div>
+
 
       {isLoading && (
-        <div className="fixed top-0 left-0 w-full h-full bg-opacity-50 bg-gray-500 flex items-center justify-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-600 border-solid"></div>
+        <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full bg-gray-500 bg-opacity-50">
+          <div className="w-16 h-16 border-t-2 border-blue-600 border-solid rounded-full animate-spin"></div>
         </div>
       )}
 
-        <div className=" flex justify-center items-center ">
+        <div className="flex items-center justify-center ">
       {/* Asegura que el contenido esté centrado vertical y horizontalmente */}
       <input
-        className="mt-8 mb-8 w-30 bg-blue-800 p-3 uppercase font-bold text-white text-lg hover:cursor-pointer rounded-md"
+        className="p-3 mt-8 mb-8 text-lg font-bold text-white uppercase bg-blue-800 rounded-md w-30 hover:cursor-pointer"
         type="submit"
         value="Reiniciar"
         onClick={handleSubmit}

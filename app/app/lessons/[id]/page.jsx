@@ -1,7 +1,6 @@
 
 
 import { Leassons } from "@/components/Organims/Lessons";
-import axios from "axios";
 
  const Lessonspage = async ({params}) => {
   const {id} = params;

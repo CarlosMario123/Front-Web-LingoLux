@@ -3,7 +3,7 @@ import Navbar from '@/components/Molecules/Navbar';
 
 import axios from "axios";
 async function getData(id){
-    const url = `http://localhost:3000/API/libroVocabulario/${id}`;
+    const url = `http://localhost:10000/API/libroVocabulario/${id}`;
    const {data} = await axios.get(url)
 
    return data;

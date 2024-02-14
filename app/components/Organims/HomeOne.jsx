@@ -12,7 +12,7 @@ export const HomeOne = () => {
   useEffect(() => {
    
  
-    fetch("http://localhost:3000/API/libroVocabulario")
+    fetch("http://localhost:10000/API/libroVocabulario")
       .then((response) => response.json())
       .then((data) => {
        

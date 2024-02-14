@@ -1,11 +1,12 @@
 import useWindowWidth from "@/hooks/useWindowWidth"
-
+import { contextGlobal } from "../Atoms/ContextoQuizz";
 export default function CardXL({contenido,callback}) {
     const windowWidth = useWindowWidth();
-
+    const {empezarCargar} = contextGlobal();
     const smallSize = (windowWidth < 1237) ? 15:20;
   const realizarEvento = ()=>{
     callback(contenido)
+    empezarCargar()
   }
   return (
     <div className={`card-style sm:w-[20rem] h-40 flex flex-row cursor-pointer w-[15rem] ${smallSize ? "sm:w-[17rem]" : "sm:w-[20rem]"}`} onClick={realizarEvento}>

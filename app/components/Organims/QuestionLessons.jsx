@@ -22,7 +22,7 @@ export default function QuestionLessons({preguntas})
         const formattedToken = token.slice(1, token.length - 1);
       
         const peticiones = preguntas.map((pregunta) => {
-          return `http://localhost:3000/api/preguntas/${pregunta}`;
+          return `http://localhost:10000/api/preguntas/${pregunta}`;
         });
       
         const promesas = peticiones.map((peticion) => {

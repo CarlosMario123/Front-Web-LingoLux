@@ -4,14 +4,17 @@ import useWindowWidth from '@/hooks/useWindowWidth';
 import utiles from "../../recursos/utiles-1.png"
 import { useRouter } from "next/navigation";
 import { useState } from 'react';
-
+import { contextGlobal } from '../Atoms/ContextoQuizz';
 export const CardsRoute = ({leccion}) => {
+  const {empezarCargar } = contextGlobal();
   const [id,setID] = useState(leccion._id)
   const router = useRouter()
   const windowWidth = useWindowWidth();
+  
    let medidaImg = (windowWidth < 642) ? 80 : 90;
 
    const irViewLesson = ()=>{
+    empezarCargar()
      router.push(`/lessons/${id}`)
    }
   return (

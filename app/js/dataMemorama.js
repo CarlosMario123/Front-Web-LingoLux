@@ -1,5 +1,5 @@
 export const data = async () => {
-    const url = "http://localhost:3000/API/memorama";
+    const url = "http://localhost:10000/API/memorama";
 
     try {
         const response = await fetch(url);

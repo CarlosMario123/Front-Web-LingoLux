@@ -20,7 +20,7 @@ export default function ContainRutas() {
       try {
         if (token) {
           const response = await axios.get(
-            "http://localhost:3000/API/lecciones",
+            "http://localhost:10000/API/lecciones",
             {
               headers: {
                 Authorization: token,
@@ -63,7 +63,6 @@ export default function ContainRutas() {
     return () => {};
   }, [windowWidth]);
 
-  // Resto de tu código ...
 
 const nextCard = () => {
   if (posicionX2 === arrayRutas.length) {

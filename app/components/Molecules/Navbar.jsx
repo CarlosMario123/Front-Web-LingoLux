@@ -6,11 +6,11 @@ import More from "./More";
 import useWindowWidth from "@/hooks/useWindowWidth";
 import NavSide from "../Organims/NavSide";
 import Notificacion from "../Atoms/Notificacion";
-
+import { contextGlobal } from "../Atoms/ContextoQuizz";
 export default function Navbar() {
  
   const windowWidth = useWindowWidth();
-
+  const {empezarCargar } = contextGlobal();
    
     //aca se definira las rutas de los enlaces
   return (
@@ -25,13 +25,13 @@ export default function Navbar() {
     </NavSide>
   ) : (
     <>
-      <Link href={"/home"} className="font-normal text-white text-roboto text-[1.2rem]">
+      <Link href={"/home"} className="font-normal text-white text-roboto text-[1.2rem]" onClick={empezarCargar}>
         Aprender
       </Link>
-      <Link href={"/sala"} className="font-normal text-white text-roboto text-[1.2rem]">
+      <Link href={"/sala"} className="font-normal text-white text-roboto text-[1.2rem]" onClick={empezarCargar}>
         Sala
       </Link>
-      <Link href={"/status"} className="font-normal text-white text-roboto text-[1.2rem]">
+      <Link href={"/status"} className="font-normal text-white text-roboto text-[1.2rem]" onClick={empezarCargar}>
         Estatus
       </Link>
       <Start cantidad={5} color = "text-white" />

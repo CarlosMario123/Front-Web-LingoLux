@@ -42,7 +42,7 @@ export default function FormRegister() {
     };
 
     axios
-      .post("http://localhost:3000/API/usuarios", usuario)
+      .post("http://localhost:10000/API/usuarios", usuario)
       .then((response) => {
         if (response.status === 201) {
           console.log("El registro se realizó correctamente");

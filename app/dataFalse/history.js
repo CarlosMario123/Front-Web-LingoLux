@@ -5,7 +5,7 @@ export async function historias() {
   let datos = [];
 
   try {
-    const response = await axios.get("http://localhost:3000/API/libroHistorias");
+    const response = await axios.get("http://localhost:10000/API/libroHistorias");
     // Manejar la respuesta exitosa
     console.log('Respuesta exitosa:', response.data);
     datos = response.data;
