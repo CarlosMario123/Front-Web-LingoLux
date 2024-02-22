@@ -66,13 +66,17 @@ export default function ContainGame() {
    }
 
      const reenviar = (e)=>{
+          if(e.id == 3){
+            window.location.href = e.ruta;
+             return;
+          }
          router.push(e.ruta)
      }
      
   return (
     <div className='mt-10'> 
     <div className="flex items-center justify-between w-full mb-5">
-  <h2 className='text-center w-full font-black text-3xl'>Juegos</h2>
+  <h2 className='w-full text-3xl font-black text-center'>Juegos</h2>
     </div>
       
        <ContainDeslize next={nextCard} reverse={backCard}>

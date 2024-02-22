@@ -11,7 +11,7 @@ export default function ContainDiccionary({ arrayDictionry }) {
   const [datos,setDatos] = useState(arrayDictionry)
   const windowWidth = useWindowWidth();
   const [posicionX1, setPosicionX1] = useState(0);
-  const [posicionX2, setPosicionX2] = useState(5);
+  const [posicionX2, setPosicionX2] = useState(4);
   
   
    useEffect(()=>{
@@ -22,17 +22,17 @@ export default function ContainDiccionary({ arrayDictionry }) {
       return ()=>{}
    },[])
   useEffect(() => {
-    if(posicionX2-5 < 0){
-      setPosicionX2(5)
+    if(posicionX2-4 < 0){
+      setPosicionX2(4)
       setPosicionX1(0)
   }
 
     if (windowWidth > 1103) {
-      setPosicionX1(posicionX2 -5)
+      setPosicionX1(posicionX2 -3)
     }
     
   if (windowWidth < 1103) {
-    setPosicionX1(posicionX2 -4)
+    setPosicionX1(posicionX2 -3)
   }
   
   if (windowWidth < 974) {
@@ -58,7 +58,7 @@ export default function ContainDiccionary({ arrayDictionry }) {
       return;
     }
     const newPosX2 = Math.min(posicionX2 + 1, arrayDictionry.length);
-    setPosicionX1(newPosX2 - 5);
+    setPosicionX1(newPosX2 - 4);
     setPosicionX2(newPosX2);
   }
   
@@ -68,12 +68,12 @@ export default function ContainDiccionary({ arrayDictionry }) {
     }
     const newPosX1 = Math.max(posicionX1 - 1, 0);
     setPosicionX1(newPosX1);
-    setPosicionX2(newPosX1 + 5);
+    setPosicionX2(newPosX1 + 4);
   }
   
   return (
     <>
-      <div className="flex items-center justify-between w-full px-9">
+      <div className="flex items-center justify-between w-full mt-8 px-9">
         <TextTitle children={"Diccionarios"} />
       </div>
   

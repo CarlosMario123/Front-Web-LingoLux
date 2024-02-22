@@ -14,7 +14,7 @@ export const GlobalState = ({ children }) => {
 
       setTimeout(()=>{
          setState(true);
-      },1500)
+      },2100)
   };
   return (
     <MyContext.Provider value={{state,setState,empezarCargar}}>

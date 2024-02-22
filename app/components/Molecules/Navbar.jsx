@@ -7,11 +7,25 @@ import useWindowWidth from "@/hooks/useWindowWidth";
 import NavSide from "../Organims/NavSide";
 import Notificacion from "../Atoms/Notificacion";
 import { contextGlobal } from "../Atoms/ContextoQuizz";
+import { useEffect, useState } from "react";
+import { getStartUser } from "@/services/user/getStartUser";
 export default function Navbar() {
- 
+
+ const [start,setStart] = useState(0);
   const windowWidth = useWindowWidth();
   const {empezarCargar } = contextGlobal();
    
+
+
+  
+  useEffect(()=>{
+    let id= localStorage.getItem("id").toString();
+    id = id.slice(1, id.length - 1);
+      getStartUser(id).then((data)=>{
+
+         setStart(data)
+      })
+  },[])
     //aca se definira las rutas de los enlaces
   return (
 
@@ -34,7 +48,7 @@ export default function Navbar() {
       <Link href={"/status"} className="font-normal text-white text-roboto text-[1.2rem]" onClick={empezarCargar}>
         Estatus
       </Link>
-      <Start cantidad={5} color = "text-white" />
+      <Start cantidad={start} color = "text-white" />
       <UserImg />
     </>
   )

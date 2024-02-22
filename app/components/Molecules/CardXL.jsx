@@ -9,7 +9,7 @@ export default function CardXL({contenido,callback}) {
     empezarCargar()
   }
   return (
-    <div className={`card-style sm:w-[20rem] h-40 flex flex-row cursor-pointer w-[15rem] ${smallSize ? "sm:w-[17rem]" : "sm:w-[20rem]"}`} onClick={realizarEvento}>
+    <div className={`hover:scale-110 duration-150 card-style sm:w-[20rem] h-40 flex flex-row cursor-pointer w-[15rem] ${smallSize ? "sm:w-[17rem]" : "sm:w-[20rem]"}`} onClick={realizarEvento}>
         <div className='relative w-4 h-full gradientCard rounded-l-md'></div>
         <div className="flex flex-col items-center justify-center w-full">
         <img src= {contenido.url} className="w-[6rem] h-[6rem]"/>

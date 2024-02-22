@@ -19,7 +19,7 @@ export const ContainLessons = ({nombre,lecciones,setStart}) => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("token", token);
+  
     const formattedToken = token.slice(1, token.length - 1);
   
     const peticiones = lecciones.map((leccion) => {

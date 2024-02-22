@@ -19,7 +19,7 @@ export const CardsRoute = ({leccion}) => {
    }
   return (
     
-    <div className="flex flex-row items-center w-56 rounded-md cursor-pointer card-style sm:w-72" onClick={irViewLesson}>
+    <div className="flex flex-row items-center w-56 rounded-md cursor-pointer card-style sm:w-72 hover:scale-110 hover:duration-150" onClick={irViewLesson}>
        <div className='relative w-4 h-full gradientCard rounded-l-md'></div>
       <div className='flex flex-col items-center w-full pt-1'>
       <Image  src={utiles} alt="" width={medidaImg} height={medidaImg}/>

@@ -1,7 +1,9 @@
 
 
 export default function Completado({evento1,evento2}) {
+  console.log("entro")
     const handleYes = ()=>{
+    
         evento1(true)
     }
 

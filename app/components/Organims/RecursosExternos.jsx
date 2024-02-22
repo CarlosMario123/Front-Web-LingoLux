@@ -30,7 +30,7 @@ export function RecursosExternos() {
   }, []);
 
   return (
-    <div className='flex flex-col w-full h-screen'>
+    <div className='flex flex-col w-full h-screen fondoGradie'>
     <Navbar/>
     <div className='flex flex-col items-center w-full'>
      <h1 className='mt-4 text-2xl font-bold text-center'>Recursos externos</h1>
@@ -40,7 +40,7 @@ export function RecursosExternos() {
             return <CardRecurso recurso={e}/>
            })
       ) : (
-        <p>No disponible por el momento</p>
+        <p className='mt-10 text-2xl font-bold'>No disponible por el momento</p>
       )}
     </div>
     </div>

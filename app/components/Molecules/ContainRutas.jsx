@@ -5,6 +5,7 @@ import ContainDeslize from "./ContainDeslize";
 import { useState, useEffect } from "react";
 import useWindowWidth from "@/hooks/useWindowWidth";
 import axios from "axios";
+
 export default function ContainRutas() {
   const [posicionX1, setPosicionX1] = useState(0);
   const [posicionX2, setPosicionX2] = useState(3);
@@ -13,22 +14,28 @@ export default function ContainRutas() {
 
   useEffect(() => {
     let token = localStorage.getItem("token");
-    console.log("token",token)
   token = token.slice(1, token.length - 1);
-    console.log(token)
+ 
+  
     const fetchData = async () => {
       try {
         if (token) {
-          const response = await axios.get(
+          const response = await fetch(
             "http://localhost:10000/API/lecciones",
             {
               headers: {
-                Authorization: token,
+                Authorization: token.toString(), 
               },
             }
           );
-          setArrayRutas(response.data.lecciones);
-         
+  
+          if (!response.ok) {
+            throw new Error(`Error fetching data: ${response.status}`);
+          }
+  
+          const data = await response.json();
+          console.log(data.lecciones)
+          setArrayRutas(data.lecciones);
         } else {
           console.log("token no usado pai");
         }
@@ -36,7 +43,7 @@ export default function ContainRutas() {
         console.error("Error fetching data:", error);
       }
     };
-
+  
     if (token) {
       fetchData();
     }

@@ -12,9 +12,9 @@ export function dataExtern(){
             urlPage:"/cuaderno"
         },
         {
-            name:"(En desarrollo)",
-            url:"  https://i.pinimg.com/originals/ff/63/27/ff63270e35d47f7040888832a2e64905.png",
-            urlPage:"/sala"
+            name:"Gramatica",
+            url:"https://img.freepik.com/vector-premium/ilustracion-vector-dibujos-animados-aislados-gramatica-mecanica_107173-27608.jpg",
+            urlPage:"/gramatica"
         }
         
     ]

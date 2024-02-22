@@ -1,11 +1,10 @@
 'use client';
-
-import Navbar from "../Molecules/Navbar";
 import { ContainLessons } from "../Molecules/ContainLessons";
-import { useState,useEffect } from "react";
-
-import axios from "axios";
+import Navbar from "../Molecules/Navbar";
 import QuestionLessons from "./QuestionLessons";
+import { useState,useEffect } from "react";
+import axios from "axios";
+
 
 export const Leassons = ({leccion}) => {
   const [datos,setDatos] = useState([])
@@ -14,9 +13,8 @@ export const Leassons = ({leccion}) => {
   const [start,setStart] = useState(false);
   useEffect(() => {
     let token = localStorage.getItem("token");
-    console.log("token",token)
   token = token.slice(1, token.length - 1);
-    console.log(token)
+
     const fetchData = async () => {
       try {
         if (token) {
@@ -28,6 +26,8 @@ export const Leassons = ({leccion}) => {
               },
             }
           );
+          console.log("respuesta")
+          console.log(response)
           setDatos(response.data.leccion.titulo);
           setTemas(response.data.leccion.temas);
           setPreguntas(response.data.leccion.preguntas)
@@ -54,8 +54,8 @@ export const Leassons = ({leccion}) => {
   return (
     <div className="">
       <Navbar/>
-      { 
-        start ? <QuestionLessons preguntas={preguntas}/> :  <ContainLessons nombre={datos} lecciones={temas} setStart={readyQuestion}/>
+      {                                      
+        start ? <QuestionLessons preguntas={preguntas} idLesson={leccion}/> :  <ContainLessons nombre={datos} lecciones={temas} setStart={readyQuestion}/>
       }
     
    

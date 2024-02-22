@@ -16,7 +16,7 @@ export default function ContainDeslize({ children,reverse,next }) {
       reverse();
    }
   return (
-    <div className={`flex flex-row  w-full px-8 ${(sizeSmall) ? "gap-x-0 justify-center":"gap-x-2 justify-between"}`}>
+    <div className={`flex flex-row  w-full px-8 ${(sizeSmall) ? "gap-x-1 justify-center":"gap-x-2 justify-between"}`}>
      <button><Image src={atras} width={40} height={40} onClick={handleReverse} /></button>
      <div className={`flex flex-row justify-center w-full px-8 gap-x-8 xl:justify-between xl:gap-x-2 ${(sizeSmall) ? "gap-x-0 ":"gap-x-8 "}`}>
      {children}
